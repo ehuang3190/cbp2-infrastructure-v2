@@ -9,15 +9,15 @@
 #define TAGPRED_CTR_INIT 0
 #define BIMODALLOG   14
 #define NUMTAGTABLES 4
-#define TAGPREDLOG 20
+#define TAGPREDLOG 14
 
 
 /////////////// STORAGE BUDGET JUSTIFICATION ////////////////
-// Total storage budget: 32KB + 131 bits
 // Total PHT counters: 2^17 
 // Total PHT size = 2^17 * 2 bits/counter = 2^18 bits = 32KB
 // GHR size: 131 bits
-// Total Size = PHT size + GHR size
+// Table size: 4 * 2^14 * (2 + 9 + 3) bits = 4 * 2^14 * 14 bits = 2^20 bits = 1MB
+// Total Size = PHT size + GHR size + Table size
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
@@ -104,9 +104,9 @@ TAGE_PREDICTOR::TAGE_PREDICTOR(void)
             else
             {
                 if(i < 2)
-                tagComp[j][i].targetLength = 8 ;
+                tagComp[j][i].targetLength = 9 ;
                 else
-                tagComp[j][i].targetLength = 8 ;
+                tagComp[j][i].targetLength = 9 ;
             }
         }   
     }    

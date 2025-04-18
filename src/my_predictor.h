@@ -13,8 +13,7 @@ public:
 
 class my_predictor : public branch_predictor {
 public:
-#define HISTORY_LENGTH	20
-#define TABLE_BITS	20
+
 	TAGE_PREDICTOR tage;
 	my_update u;
 	branch_info bi;

@@ -6,7 +6,7 @@
 #include <bitset>
 
 #define NUMTAGTABLES 4
-
+#define GHR_SIZE 131
 
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ struct CompressedHist
     UINT32 targetLength;
     UINT32 compHist;
       
-    void updateCompHist(std::bitset<131> ghr)
+    void updateCompHist(std::bitset<GHR_SIZE> ghr)
     {
         
         /*bitset<131> temp;;
@@ -71,7 +71,7 @@ class TAGE_PREDICTOR{
   // The state is defined for Gshare, change for your design
 
  private:
-  std::bitset<131> GHR;           // global history register
+  std::bitset<GHR_SIZE> GHR;           // global history register
   // 16 bit path history
   int PHR;
   // Bimodal
