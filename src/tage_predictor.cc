@@ -13,8 +13,8 @@
 
 
 /////////////// STORAGE BUDGET JUSTIFICATION ////////////////
-// Total PHT counters: 2^17 
-// Total PHT size = 2^17 * 2 bits/counter = 2^18 bits = 32KB
+// Total PHT counters: 2^14 (Bimodal)
+// Total PHT size = 2^14 * 2 bits/counter = 2^15 bits = 32KB
 // GHR size: 131 bits
 // Table size: 4 * 2^14 * (2 + 9 + 3) bits = 4 * 2^14 * 14 bits = 2^20 bits = 1MB
 // Total Size = PHT size + GHR size + Table size
