@@ -7,7 +7,7 @@
 #define BIMODAL_CTR_INIT 2
 #define TAGPRED_CTR_MAX  7
 #define TAGPRED_CTR_INIT 0
-#define BIMODALLOG   17
+#define BIMODALLOG   14
 #define NUMTAGTABLES 4
 #define TAGPREDLOG 20
 
