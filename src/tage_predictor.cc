@@ -104,9 +104,9 @@ TAGE_PREDICTOR::TAGE_PREDICTOR(void)
             else
             {
                 if(i < 2)
-                tagComp[j][i].targetLength = 9 ;
+                tagComp[j][i].targetLength = 8 ;
                 else
-                tagComp[j][i].targetLength = 9 ;
+                tagComp[j][i].targetLength = 8 ;
             }
         }   
     }    
