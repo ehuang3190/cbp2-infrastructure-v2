@@ -60,6 +60,7 @@ TAGE_PREDICTOR::TAGE_PREDICTOR(void)
     
     // Geometric lengths of history taken to consider correlation of different age.
     // Table 0 with the longest history as per PPM code
+    
     geometric[0] = 130;
     geometric[1] = 44;
     geometric[2] = 15;
