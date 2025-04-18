@@ -7,16 +7,16 @@
 #define BIMODAL_CTR_INIT 2
 #define TAGPRED_CTR_MAX  7
 #define TAGPRED_CTR_INIT 0
-#define BIMODALLOG   14
+#define BIMODALLOG   17
 #define NUMTAGTABLES 4
-#define TAGPREDLOG 12
+#define TAGPREDLOG 20
 
 
 /////////////// STORAGE BUDGET JUSTIFICATION ////////////////
-// Total storage budget: 32KB + 17 bits
+// Total storage budget: 32KB + 131 bits
 // Total PHT counters: 2^17 
 // Total PHT size = 2^17 * 2 bits/counter = 2^18 bits = 32KB
-// GHR size: 17 bits
+// GHR size: 131 bits
 // Total Size = PHT size + GHR size
 /////////////////////////////////////////////////////////////
 
