@@ -9,14 +9,14 @@
 #define TAGPRED_CTR_INIT 0
 #define BIMODALLOG   14
 #define NUMTAGTABLES 4
-#define TAGPREDLOG 14
+#define TAGPREDLOG 13
 
 
 /////////////// STORAGE BUDGET JUSTIFICATION ////////////////
 // Total PHT counters: 2^14 (Bimodal)
 // Total PHT size = 2^14 * 2 bits/counter = 2^15 bits = 32KB
 // GHR size: 131 bits
-// Table size: 4 * 2^14 * (2 + 9 + 3) bits = 4 * 2^14 * 14 bits = 2^20 bits = 1MB
+// Table size: 4 * 2^13 * (2 + 9 + 3) bits = 4 * 2^13 * 14 bits = 458KB
 // Total Size = PHT size + GHR size + Table size
 /////////////////////////////////////////////////////////////
 
@@ -176,7 +176,7 @@ bool   TAGE_PREDICTOR::GetPrediction(UINT32 PC){
        indexTagPred[3] = PC ^ (PC >> TAGPREDLOG) ^ indexComp[3].compHist ^ PHR ^ (PHR >> TAGPREDLOG);*/
        indexTagPred[0] = PC ^ (PC >> TAGPREDLOG) ^ indexComp[0].compHist ^ PHR ^ (PHR >> TAGPREDLOG);
        indexTagPred[1] = PC ^ (PC >> (TAGPREDLOG - 1)) ^ indexComp[1].compHist ^ (PHR );
-       indexTagPred[2] = PC ^ (PC >> (TAGPREDLOG - 2)) ^ indexComp[2].compHist ^ (PHR & 31);
+       indexTagPred[2] = PC ^ (PC >> (TAGPREDLOG - 2)) ^ indexComp[2].compHist ^ (PHR & 63);
        indexTagPred[3] = PC ^ (PC >> (TAGPREDLOG - 3)) ^ indexComp[3].compHist ^ (PHR & 7);  // 1 & 63 gives 3.358 // shuttle 31 and 15: 3.250 //ece 31 and 1: 3.252
        /// These need to be masked   // shuttle : 1023 63 and 15: 3.254 // ece 1023, 31 and 1 : 3.254
        ////  63 and 7  and PC  -2 -4 -6 // 63 and 1 gives 3.256  // 63 and 7 s: // 31 and 7 : 3.243 best !

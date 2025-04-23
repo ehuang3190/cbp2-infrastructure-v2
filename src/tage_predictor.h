@@ -27,7 +27,7 @@ struct CompressedHist
     UINT32 targetLength;
     UINT32 compHist;
       
-    void updateCompHist(std::bitset<GHR_SIZE> ghr)
+    void updateCompHist(bitset<GHR_SIZE> ghr)
     {
         
         /*bitset<131> temp;;
@@ -62,7 +62,7 @@ struct CompressedHist
             compHist  = (compHist << 1) + ghr[0];
             compHist ^= ((compHist & mask2) >> targetLength);
             compHist ^= mask1;
-            compHist &= mask;  
+            compHist &= mask;
          
     }    
 };
@@ -71,7 +71,7 @@ class TAGE_PREDICTOR{
   // The state is defined for Gshare, change for your design
 
  private:
-  std::bitset<GHR_SIZE> GHR;           // global history register
+  bitset<GHR_SIZE> GHR;           // global history register
   // 16 bit path history
   int PHR;
   // Bimodal
