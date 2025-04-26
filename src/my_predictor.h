@@ -351,10 +351,10 @@ public:
 						if(count == 1) { // only one table has available slot
 							matchBank = bank_store[0];
 						} else if(count > 1){ //allocate to the one with longer history with twice the probability as the shorter one (per TAGE paper)
-							if(randNo > 33 && randNo <= 99){
-								matchBank = bank_store[(count-1)]; //longer history
+							if(randNo == 101){
+								matchBank = bank_store[(count-2)]; //longer history
 							} else {
-								matchBank = bank_store[(count-2)]; //shorter history
+								matchBank = bank_store[(count-1)]; //shorter history
 							}   
 						}
 						//perform actual allocation
