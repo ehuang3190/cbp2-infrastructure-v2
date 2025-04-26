@@ -337,8 +337,6 @@ public:
 							tageTables[i][index[i]].usefulBits--;
 						}
 					} else { //pick which table to use with allocation
-						srand(time(NULL));
-						int randNo = rand() % 100;
 						int count = 0;
 						int bank_store[NUMTAGETABLES - 1] = {-1, -1, -1}; //store which tables have available slot
 						int matchBank = 0;
@@ -350,12 +348,8 @@ public:
 						}  
 						if(count == 1) { // only one table has available slot
 							matchBank = bank_store[0];
-						} else if(count > 1){ //allocate to the one with longer history with twice the probability as the shorter one (per TAGE paper)
-							if(randNo == 101){
-								matchBank = bank_store[(count-2)]; //longer history
-							} else {
-								matchBank = bank_store[(count-1)]; //shorter history
-							}   
+						} else if(count > 1){ //allocate to the one with longer history 
+							matchBank = bank_store[(count-1)]; 
 						}
 						//perform actual allocation
 						for (int i = matchBank; i > -1; i--) {
