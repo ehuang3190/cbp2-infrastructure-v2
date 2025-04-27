@@ -4,6 +4,6 @@ traces and include the compression engine used to pre-process the traces.
 
 See doc/index.html for "complete" documentation.
 
-Updated files are my_predictor.h, and a utils.h file added for utilities.
+Updated files are src/my_predictor.h, and a utils.h file added in the src folder for utilities.
 
 MPKI 4.134 (Macbook Pro), 4.17 (Thinkpad T14s)
