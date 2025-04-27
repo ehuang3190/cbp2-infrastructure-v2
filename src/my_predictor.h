@@ -8,7 +8,7 @@
 
 #define GHR_SIZE 131
 #define BIMODAL_CTR_MAX 3
-#define BIMODAL_CTR_INIT 2
+#define BIMODAL_CTR_INIT 1
 #define TAGEPRED_CTR_MAX 7
 #define TAGEPRED_CTR_INIT 0
 #define BIMODALLOG 14
@@ -372,8 +372,8 @@ public:
 		
 			// Periodic Useful bit Reset Logic ( Important so as to optimize compared to PPM paper)
 			clock++;
-			//for every 256 K instruction 1st MSB than LSB
-			if(clock == (256*1024)) {
+			//for every 512 K instruction 1st MSB than LSB
+			if(clock == (512*1024)) {
 				// reset clock
 				clock = 0;
 				if(clock_flip == 1) {
