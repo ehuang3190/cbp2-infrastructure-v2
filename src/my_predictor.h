@@ -20,8 +20,9 @@
 // Total PHT counters: 2^14 (Bimodal)
 // Total PHT size = 2^14 * 2 bits/counter = 2^15 bits = 32KB
 // GHR size: 131 bits
+// PHR size: 16 bits
 // Table size: 4 * 2^13 * (2 + 9 + 3) bits = 4 * 2^13 * 14 bits = 458KB
-// Total Size = PHT size + GHR size + Table size
+// Total Size = PHT size + GHR size + PHR size + Table size
 /////////////////////////////////////////////////////////////
 
 
